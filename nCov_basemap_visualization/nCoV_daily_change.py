@@ -1,14 +1,4 @@
 # -*- coding:utf-8 -*-
-# project_xxx\venv\Scripts python
-
-'''
-Author: Felix
-WeiXin: AXiaShuBai
-Email: xiashubai@gmail.com
-Blog: https://blog.csdn.net/u011318077
-Date: 2020/1/31 17:18
-Desc:
-'''
 
 from nCov_data_analysis.china_data_analysis import ChinaData
 import matplotlib.pyplot as plt
@@ -50,9 +40,9 @@ def daily_change():
     plt.legend(loc='upper center')
 
     # 展示图形
-    # plt.show()
+    plt.show()
     # 保存图形为图片,第一个参数保存路径，第二个参数裁掉多余的空白部分
-    plt.savefig('2019-nCoV疫情变化时间图.png', bbox_inches='tight')
+    # plt.savefig('2019-nCoV疫情变化时间图.png', bbox_inches='tight')
 
 if __name__ == '__main__':
     daily_change()

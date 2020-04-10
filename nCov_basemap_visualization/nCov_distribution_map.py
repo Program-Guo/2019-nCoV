@@ -1,14 +1,5 @@
 # -*- coding:utf-8 -*-
-# project_xxx\venv\Scripts python
 
-'''
-Author: Felix
-WeiXin: AXiaShuBai
-Email: xiashubai@gmail.com
-Blog: https://blog.csdn.net/u011318077
-Date: 2020/1/31 17:18
-Desc:
-'''
 from nCov_data_analysis.province_data_analysis import ProvinceData
 import numpy as np
 import pandas as pd
@@ -62,7 +53,7 @@ def distribution_map():
 
     # 绘制疫情分布点，点的尺寸大小使用上面离散化后的尺寸
     x, y = map(lon_list, lat_list)
-    map.scatter(x, y, s=size, c='red')
+    map.scatter(x, y, s=size/20, c='red')
 
     # 设置数字标记
     for i in range(0, 34):

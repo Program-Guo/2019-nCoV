@@ -1,14 +1,4 @@
 # -*- coding:utf-8 -*-
-# project_xxx\venv\Scripts python
-
-'''
-Author: Felix
-WeiXin: AXiaShuBai
-Email: xiashubai@gmail.com
-Blog: https://blog.csdn.net/u011318077
-Date: 2020/1/30 21:15
-Desc:
-'''
 
 from nCov_data_analysis import a_get_html
 import json
@@ -35,6 +25,7 @@ class ProvinceData():
             province_total_suspect.append(province['total']['suspect'])
             province_total_dead.append(province['total']['dead'])
             province_total_heal.append(province['total']['heal'])
+
         # 将省份名称和确诊人数对应打包为字典，用于ECharts地图可视化
         province_total_confirm_dict = {'name': province_name, 'value': province_total_confirm}
         print(province_total_confirm_dict)
@@ -47,7 +38,7 @@ class ProvinceData():
         areaTree = self.all_data['areaTree'][0]['children']
         province_name = list()
         province_today_confirm = list()
-        province_today_suspect = list()
+        # province_today_suspect = list()
         province_today_dead = list()
         province_today_heal = list()
         for province in areaTree:
@@ -56,7 +47,7 @@ class ProvinceData():
             # province_today_suspect.append(province['today']['suspect'])  # 目前疑似病例数据已经没了可以注销该栏
             province_today_dead.append(province['total']['dead'])
             province_today_heal.append(province['total']['heal'])
-        # print(province_today_confirm)
+        print(province_today_confirm)
 
     def main(self):
         self.province_total_data()

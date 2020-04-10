@@ -1,24 +1,14 @@
 # -*- coding:utf-8 -*-
-# project_xxx\venv\Scripts python
-
-'''
-Author: Felix
-WeiXin: AXiaShuBai
-Email: xiashubai@gmail.com
-Blog: https://blog.csdn.net/u011318077
-Date: 2020/1/30 20:33
-Desc:
-'''
 
 import requests
 import json
 
 class nCovData():
 
-    def __init__(self):
+    def __init__(self, url='https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5'):
 
         # 获取原始全国疫情数据的网址
-        self.start_url = 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5'
+        self.start_url = url
 
     def get_html_text(self):
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:66.0) Gecko/20100101 Firefox/66.0'}

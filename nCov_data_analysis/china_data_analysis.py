@@ -1,14 +1,4 @@
 # -*- coding:utf-8 -*-
-# project_xxx\venv\Scripts python
-
-'''
-Author: Felix
-Email: xiashubai@gmail.com
-WeiXin: AXiaShuBai
-Blog: https://blog.csdn.net/u011318077
-Date: 2020/1/30 18:26
-Desc:
-'''
 
 from nCov_data_analysis import a_get_html
 
@@ -26,6 +16,7 @@ class ChinaData():
 
     def china_everyday_data(self):
         '''获取中国每日累积数据'''
+        self.all_data = a_get_html.nCovData('https://view.inews.qq.com/g2/getOnsInfo?name=disease_other').get_html_text()
         chinaDayList = self.all_data['chinaDayList']
         date_list = list()
         everyday_confirm = list()
@@ -44,7 +35,7 @@ class ChinaData():
 
     def main(self):
         self.china_total_data()
-        self.china_everyday_data()
+        # self.china_everyday_data()
 
 if __name__ == '__main__':
     world_data= ChinaData()
