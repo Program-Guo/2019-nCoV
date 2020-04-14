@@ -18,7 +18,7 @@ class nCovData():
         data = json.loads(res.text)
         # 所有的疫情数据,data['data']数据还是str的json格式需要转换为字典格式，包括：中国累积数据、各国数据(中国里面包含各省及地级市详细数据)、中国每日累积数据(1月13日开始)
         all_data = json.loads(data['data'])
-        # print(all_data)
+        print(all_data)
         return all_data
 
 if __name__ == '__main__':

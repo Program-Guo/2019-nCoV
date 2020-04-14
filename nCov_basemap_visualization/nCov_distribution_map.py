@@ -64,7 +64,7 @@ def distribution_map():
     plt.show()
 
 # 由于原始疫情数据是按确诊人数排列的，与本地经纬度表排序不一致
-# 我们将省份相同的名称对应的confirm(初始confirm都是0)值相加，得到重新排序后的确诊人数列表
+# 我们将名称相同的省份对应的confirm(初始confirm都是0)值相加，得到重新排序后的确诊人数列表
 def data_merge(A, B):
     C = dict()
     for key in A:

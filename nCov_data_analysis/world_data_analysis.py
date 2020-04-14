@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
-from nCov_data_analysis import a_get_html
+# from nCov_data_analysis import a_get_html
+import a_get_html
 import json
 
 class WorldData():
@@ -28,7 +29,7 @@ class WorldData():
         # 将各国名称和确诊人数对应打包为字典，用于ECharts地图可视化
         province_total_confirm_dict = {'name': country_name, 'value': country_total_confirm}
         print(len(province_total_confirm_dict))
-        with open('country_total.json', 'w', encoding='utf-8') as f:
+        with open('./country_total.json', 'w', encoding='utf-8') as f:
             json.dump(province_total_confirm_dict, f, ensure_ascii=False)
 
     def world_today_data(self):

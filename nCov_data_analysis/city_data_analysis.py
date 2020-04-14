@@ -3,7 +3,8 @@
 # 获取每个省份下各地级市详细数据，以湖北举例说明
 # 其它省份获取一样，若要全部获取，可以使用使用循环取出每一个省份，然后再取出每个省份下地级市的数据
 
-from nCov_data_analysis import a_get_html
+import a_get_html
+import json
 
 class CityData():
 
@@ -15,8 +16,11 @@ class CityData():
         '''获取湖北省各地级市累积数据'''
         # areaTree对应的第一个数据就是中国，下面的children对应的就是每个省份的数据，
         # 第一个省份就是湖北省，湖北省下面的children就是每个地级市的数据，也是一个列表，列表里面是字典
-        areaTree = self.all_data['areaTree'][0]['children'][1]['children']
-        print(areaTree)
+        # print(self.all_data['areaTree'][0]['children'][1]['children']) 黑龙江
+        # print(self.all_data['areaTree'][0]['children'][3]['children']) 湖北
+        # print(self.all_data['areaTree'][0]['children'][24]['children']) 湖北
+        areaTree = self.all_data['areaTree'][0]['children'][24]['children']
+        # print(areaTree)
         city_name = list()
         city_total_confirm = list()
         city_total_suspect = list()
@@ -28,13 +32,17 @@ class CityData():
             city_total_suspect.append(city['total']['suspect'])
             city_total_dead.append(city['total']['dead'])
             city_total_heal.append(city['total']['heal'])
+        city_total_confirm_dict = {'name': city_name, 'value': city_total_confirm}
+        # print(city_total_confirm_dict)
+        with open('./hunan_total.json', 'w', encoding='utf-8') as f:
+            json.dump(city_total_confirm_dict, f, ensure_ascii=False)
         print(city_name)
-        print(city_total_confirm)
+        #print(city_total_confirm)
 
     def hubei_today_data(self):
         '''获取湖北省各地级市今日数据'''
         # areaTree = self.all_data['areaTree'][0]['children']
-        areaTree = self.all_data['areaTree'][0]['children'][1]['children']
+        areaTree = self.all_data['areaTree'][0]['children'][24]['children']
         city_name = list()
         city_today_confirm = list()
         # city_today_suspect = list()

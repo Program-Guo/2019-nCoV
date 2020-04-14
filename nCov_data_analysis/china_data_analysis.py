@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from nCov_data_analysis import a_get_html
+import a_get_html
 
 class ChinaData():
 
