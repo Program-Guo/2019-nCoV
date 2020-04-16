@@ -9,51 +9,60 @@
     <script src="../echarts/map/js/world.js"></script>
     <script src="../echarts/map/js/province/hubei.js"></script>
     <script src="../echarts/map/js/province/hunan.js"></script>
-    
 </head>
 <body>
-    <div id="main" style="width: 1070px;height:600px;">
-        <div id="catalog" class="box" style="width:77px; height:auto; float:left; display:inline-block">
-            <button id="world_show" type="button" >世界</button>
-            <button id="China_show" type="button" >中国</button>
-            <button id="HuBei_show" type="button" >湖北</button>
-            <button id="HuNan_show" type="button" >湖南</button>
-        </div>
-        <div id="myMap" class="box" style="width:970px; height:480px; float:right; display:inline-block"></div>
-            
-    </div>  
+<div id="main" style="width: 1070px;height:600px;">
+    <div id="catalog" class="box" style="width:77px; height:auto; float:left; display:inline-block">
+        <button id="world_show" type="button">世界</button>
+        <button id="China_show" type="button">中国</button>
+        <button id="HuBei_show" type="button">湖北</button>
+        <button id="HuNan_show" type="button">湖南</button>
+    </div>
+    <div id="myMap" class="box" style="width:970px; height:480px; float:right; display:inline-block"></div>
+
+</div>
 </body>
 <style type="text/css">
-    button {background-color: white; width:77px; height:50px; border-style:dashed;}
-    .box {border-style: double; border-width: 5px; border-color:red;}
+    button {
+        background-color: white;
+        width: 77px;
+        height: 50px;
+        border-style: dashed;
+    }
+
+    .box {
+        border-style: double;
+        border-width: 5px;
+        border-color: red;
+    }
 </style>
 <script language="JAVASCRIPT" src="../js/callMap.js"></script>
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('myMap'));
     worldShow();
 
-    $('#world_show').click(function(){
+    $('#world_show').click(function () {
+        myChart.clear();
         console.log("hello world");
         worldShow();
-        
     });
 
-    $('#China_show').click(function(){
+    $('#China_show').click(function () {
+        myChart.clear();
         console.log("hello China");
         ChinaShow();
-        
     });
 
-    $('#HuBei_show').click(function(){
+    $('#HuBei_show').click(function () {
+        myChart.clear();
         console.log("hello China");
         HuBeiShow("湖北");
-        
     });
 
-    $('#HuNan_show').click(function(){
+    $('#HuNan_show').click(function () {
+        myChart.clear();
         console.log("hello China");
         HuNanShow("湖南");
-        
     });
 </script>
 </html>
